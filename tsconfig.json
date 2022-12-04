@@ -16,6 +16,7 @@
     "entryPoints": [
       "src/homeassistant/index.ts"
     ],
+    "plugin": "typedoc-plugin-markdown",
     "out": "docs"
   },
   "include": [
