@@ -1,8 +1,12 @@
-# Notion x Home Assistant
+# 🏠 Notion x Home Assistant
+
+[![CI](https://github.com/brittonhayes/notion-homeassistant/actions/workflows/ci.yml/badge.svg)](https://github.com/brittonhayes/notion-homeassistant/actions/workflows/ci.yml)
+
+📚 [API Docs](https://github.com/brittonhayes/notion-homeassistant/tree/main/docs)
 
 This is a simple integration between [Notion](https://www.notion.so/) and [Home Assistant](https://www.home-assistant.io/). Allows you to sync your Home Assistant entities, devices, and services to Notion databases.
 
-## Usage
+## ⚡ Usage
 
 How to use the integration.
 

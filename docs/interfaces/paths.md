@@ -1,4 +1,4 @@
-[notion-homeassistant](../README.md) / [Exports](../modules.md) / paths
+[notion-homeassistant](../README.md) / paths
 
 # Interface: paths
 
@@ -33,7 +33,7 @@ Do not make direct changes to the file.
 
 #### Defined in
 
-[src/homeassistant/schema.ts:7](https://github.com/brittonhayes/notion-homeassistant/blob/4812015/src/homeassistant/schema.ts#L7)
+[src/homeassistant/schema.ts:7](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L7)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:27](https://github.com/brittonhayes/notion-homeassistant/blob/4812015/src/homeassistant/schema.ts#L27)
+[src/homeassistant/schema.ts:27](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L27)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:47](https://github.com/brittonhayes/notion-homeassistant/blob/4812015/src/homeassistant/schema.ts#L47)
+[src/homeassistant/schema.ts:47](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L47)
 
 ___
 
@@ -108,4 +108,4 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:67](https://github.com/brittonhayes/notion-homeassistant/blob/4812015/src/homeassistant/schema.ts#L67)
+[src/homeassistant/schema.ts:67](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L67)
