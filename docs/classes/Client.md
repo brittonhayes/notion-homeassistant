@@ -31,7 +31,7 @@ Home Assistant API Client
 
 #### Defined in
 
-[src/homeassistant/client.ts:44](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/client.ts#L44)
+[src/homeassistant/client.ts:44](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L44)
 
 ## Properties
 
@@ -49,7 +49,7 @@ Home Assistant API Client
 
 #### Defined in
 
-[src/homeassistant/client.ts:37](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/client.ts#L37)
+[src/homeassistant/client.ts:37](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L37)
 
 ___
 
@@ -67,7 +67,7 @@ Home Assistant configuration
 
 #### Defined in
 
-[src/homeassistant/client.ts:77](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/client.ts#L77)
+[src/homeassistant/client.ts:77](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L77)
 
 ___
 
@@ -85,7 +85,7 @@ API health endpoints
 
 #### Defined in
 
-[src/homeassistant/client.ts:61](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/client.ts#L61)
+[src/homeassistant/client.ts:61](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L61)
 
 ___
 
@@ -99,8 +99,8 @@ Home Assistant services endpoint
 
 | Name | Type |
 | :------ | :------ |
-| `list` | () => `Promise`<{ `data`: { `domain?`: `string` ; `services?`: `unknown`[]  }[] ; `status`: `number`  }\> |
+| `list` | () => `Promise`<{ `data`: { `domain?`: `string` ; `services?`: { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[]  }[] ; `status`: `number`  }\> |
 
 #### Defined in
 
-[src/homeassistant/client.ts:93](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/client.ts#L93)
+[src/homeassistant/client.ts:93](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L93)

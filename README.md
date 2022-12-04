@@ -20,6 +20,8 @@ The integration also uses the Home Assistant REST API, so you need to create a l
 # Required
 NOTION_TOKEN=""
 # Required
+NOTION_DATABASE_ID=""
+# Required
 HASS_TOKEN=""
 # Optional (Defaults to http://localhost:8123)
 HASS_URL=""

@@ -28,7 +28,7 @@ notion-homeassistant
 
 #### Defined in
 
-[src/homeassistant/schema.ts:154](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L154)
+[src/homeassistant/schema.ts:163](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L163)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:156](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L156)
+[src/homeassistant/schema.ts:165](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L165)
 
 ___
 
@@ -48,4 +48,4 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:89](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L89)
+[src/homeassistant/schema.ts:89](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L89)

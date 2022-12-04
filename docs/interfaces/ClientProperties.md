@@ -32,7 +32,7 @@ The base URL of the Home Assistant instance
 
 #### Defined in
 
-[src/homeassistant/client.ts:18](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/client.ts#L18)
+[src/homeassistant/client.ts:18](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L18)
 
 ___
 
@@ -48,7 +48,7 @@ false
 
 #### Defined in
 
-[src/homeassistant/client.ts:30](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/client.ts#L30)
+[src/homeassistant/client.ts:30](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L30)
 
 ___
 
@@ -60,4 +60,4 @@ The Home Assistant API token
 
 #### Defined in
 
-[src/homeassistant/client.ts:23](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/client.ts#L23)
+[src/homeassistant/client.ts:23](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L23)

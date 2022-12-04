@@ -33,7 +33,7 @@ Do not make direct changes to the file.
 
 #### Defined in
 
-[src/homeassistant/schema.ts:7](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L7)
+[src/homeassistant/schema.ts:7](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L7)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:27](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L27)
+[src/homeassistant/schema.ts:27](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L27)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:47](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L47)
+[src/homeassistant/schema.ts:47](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L47)
 
 ___
 
@@ -100,12 +100,12 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `get` | { `responses`: { `200`: { `content`: { `application/json`: { `domain?`: `string` ; `services?`: `unknown`[]  }[]  }  }  }  } | Returns an array of service objects. Each service object contains domain, service name, and description. **`Description`** Returns an array of service objects. Each service object contains domain, service name, and description. |
-| `get.responses` | { `200`: { `content`: { `application/json`: { `domain?`: `string` ; `services?`: `unknown`[]  }[]  }  }  } | Returns an array of service objects. Each service object contains domain, service name, and description. **`Description`** Returns an array of service objects. Each service object contains domain, service name, and description. |
-| `get.responses.200` | { `content`: { `application/json`: { `domain?`: `string` ; `services?`: `unknown`[]  }[]  }  } | **`Description`** Successful response |
-| `get.responses.200.content` | { `application/json`: { `domain?`: `string` ; `services?`: `unknown`[]  }[]  } | - |
-| `get.responses.200.content.application/json` | { `domain?`: `string` ; `services?`: `unknown`[]  }[] | - |
+| `get` | { `responses`: { `200`: { `content`: { `application/json`: { `domain?`: `string` ; `services?`: { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[]  }[]  }  }  }  } | Returns an array of service objects. Each service object contains domain, service name, and description. **`Description`** Returns an array of service objects. Each service object contains domain, service name, and description. |
+| `get.responses` | { `200`: { `content`: { `application/json`: { `domain?`: `string` ; `services?`: { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[]  }[]  }  }  } | Returns an array of service objects. Each service object contains domain, service name, and description. **`Description`** Returns an array of service objects. Each service object contains domain, service name, and description. |
+| `get.responses.200` | { `content`: { `application/json`: { `domain?`: `string` ; `services?`: { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[]  }[]  }  } | **`Description`** Successful response |
+| `get.responses.200.content` | { `application/json`: { `domain?`: `string` ; `services?`: { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[]  }[]  } | - |
+| `get.responses.200.content.application/json` | { `domain?`: `string` ; `services?`: { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[]  }[] | - |
 
 #### Defined in
 
-[src/homeassistant/schema.ts:67](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L67)
+[src/homeassistant/schema.ts:67](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L67)

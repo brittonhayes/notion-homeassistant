@@ -141,7 +141,16 @@ export interface components {
       /** @description The domain of the service. */
       domain?: string;
       /** @description The names of the services. */
-      services?: unknown[];
+      services?: {
+        /** @description The name of the service. */
+        name?: string;
+        /** @description The description of the service. */
+        description?: string;
+        /** @description The fields of the service. */
+        fields?: Record<string, never>;
+        /** @description The target of the service. */
+        target?: Record<string, never>;
+      }[];
     };
   };
   responses: never;

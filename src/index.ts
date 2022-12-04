@@ -1,30 +1,66 @@
-import * as homeassistant from "./homeassistant";
 import { Client } from "@notionhq/client";
+import * as homeassistant from "./homeassistant";
+
 import dotenv from "dotenv";
+import { Integration } from "./notion";
 
 dotenv.config();
 
 async function main() {
-  const notion = new Client({
-    auth: process.env.NOTION_TOKEN,
-  });
-  const response = await notion.databases.query({
-    database_id: "87d830629f814fd8ad62106328937a3c",
-  });
-  console.log("Got response:", response);
-
   const ha = new homeassistant.Client({
     baseUrl: process.env.HASS_URL,
     token: process.env.HASS_TOKEN,
   });
 
-  await ha.services.list().then((response) => {
-    console.log(response.data[0].services);
+  const notion = new Client({
+    auth: process.env.NOTION_TOKEN,
+  });
+
+  const services = await ha.services.list();
+
+  const integration = new Integration({
+    client: notion,
+  });
+
+  const properties = await integration.database.properties(
+    process.env.NOTION_DATABASE_ID!
+  );
+
+  services.data.map(async (data) => {
+    await integration.database.update({
+      parent: {
+        database_id: process.env.NOTION_DATABASE_ID!,
+      },
+      properties: {
+        Domain: {
+          type: "title",
+          title: [
+            {
+              type: "text",
+              text: { content: data.domain! },
+            },
+          ],
+        },
+        Services: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: "content",
+              },
+            },
+          ],
+        },
+      },
+    });
   });
 }
 
 main()
-  .then(() => process.exit(0))
+  .then((responses) => {
+    console.log(responses);
+  })
   .catch((err) => {
     console.error(err);
     process.exit(1);

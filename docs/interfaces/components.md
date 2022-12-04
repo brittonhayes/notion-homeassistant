@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/homeassistant/schema.ts:150](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L150)
+[src/homeassistant/schema.ts:159](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L159)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:148](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L148)
+[src/homeassistant/schema.ts:157](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L157)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:151](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L151)
+[src/homeassistant/schema.ts:160](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L160)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:149](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L149)
+[src/homeassistant/schema.ts:158](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L158)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/homeassistant/schema.ts:147](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L147)
+[src/homeassistant/schema.ts:156](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L156)
 
 ___
 
@@ -95,11 +95,11 @@ ___
 | `Events` | { `event?`: `string` ; `listener_count?`: `Record`<`string`, `never`\>  }[] | **`Description`** An array of event objects. Each event object contains event name and listener count. |
 | `Message` | { `message?`: `string`  } | - |
 | `Message.message?` | `string` | **`Description`** The message returned by the API. |
-| `Service` | { `domain?`: `string` ; `services?`: `unknown`[]  } | - |
+| `Service` | { `domain?`: `string` ; `services?`: { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[]  } | - |
 | `Service.domain?` | `string` | **`Description`** The domain of the service. |
-| `Service.services?` | `unknown`[] | **`Description`** The names of the services. |
-| `Services` | { `domain?`: `string` ; `services?`: `unknown`[]  }[] | **`Description`** An array of service objects. Each service object contains domain, service name, and description. |
+| `Service.services?` | { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[] | **`Description`** The names of the services. |
+| `Services` | { `domain?`: `string` ; `services?`: { `description?`: `string` ; `fields?`: `Record`<`string`, `never`\> ; `name?`: `string` ; `target?`: `Record`<`string`, `never`\>  }[]  }[] | **`Description`** An array of service objects. Each service object contains domain, service name, and description. |
 
 #### Defined in
 
-[src/homeassistant/schema.ts:92](https://github.com/brittonhayes/notion-homeassistant/blob/e751188/src/homeassistant/schema.ts#L92)
+[src/homeassistant/schema.ts:92](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/schema.ts#L92)
