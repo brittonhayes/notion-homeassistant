@@ -31,13 +31,13 @@ Home Assistant API Client
 
 #### Defined in
 
-[src/homeassistant/client.ts:44](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L44)
+[src/homeassistant/client.ts:44](https://github.com/brittonhayes/notion-homeassistant/blob/a98ac0d/src/homeassistant/client.ts#L44)
 
 ## Properties
 
 ### client
 
-• `Protected` **client**: `Object`
+• `Private` `Readonly` **client**: `Object`
 
 #### Type declaration
 
@@ -49,7 +49,7 @@ Home Assistant API Client
 
 #### Defined in
 
-[src/homeassistant/client.ts:37](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L37)
+[src/homeassistant/client.ts:37](https://github.com/brittonhayes/notion-homeassistant/blob/a98ac0d/src/homeassistant/client.ts#L37)
 
 ___
 
@@ -67,7 +67,7 @@ Home Assistant configuration
 
 #### Defined in
 
-[src/homeassistant/client.ts:77](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L77)
+[src/homeassistant/client.ts:77](https://github.com/brittonhayes/notion-homeassistant/blob/a98ac0d/src/homeassistant/client.ts#L77)
 
 ___
 
@@ -85,7 +85,7 @@ API health endpoints
 
 #### Defined in
 
-[src/homeassistant/client.ts:61](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L61)
+[src/homeassistant/client.ts:61](https://github.com/brittonhayes/notion-homeassistant/blob/a98ac0d/src/homeassistant/client.ts#L61)
 
 ___
 
@@ -103,4 +103,4 @@ Home Assistant services endpoint
 
 #### Defined in
 
-[src/homeassistant/client.ts:93](https://github.com/brittonhayes/notion-homeassistant/blob/8ba46af/src/homeassistant/client.ts#L93)
+[src/homeassistant/client.ts:93](https://github.com/brittonhayes/notion-homeassistant/blob/a98ac0d/src/homeassistant/client.ts#L93)

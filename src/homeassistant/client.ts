@@ -34,7 +34,7 @@ export interface ClientProperties {
  * Home Assistant API Client
  */
 export class Client {
-  protected client = Fetcher.for<homeassistant.paths>();
+  private readonly client = Fetcher.for<homeassistant.paths>();
 
   /**
    *
