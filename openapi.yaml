@@ -1,0 +1,147 @@
+openapi: "3.0.2"
+info:
+  title: "Home Assistant"
+  version: "1.0.0"
+  description: "RESTful API for Home Assistant"
+  contact:
+    name: "brittonhayes"
+    url: "https://github.com/brittonhayes/notion-homeassistant"
+servers:
+  - url: "http://localhost:8123/api"
+    description: "Home Assistant"
+security:
+  - bearerAuth: []
+paths:
+  /api/:
+    get:
+      summary: "Returns a message if the API is up and running."
+      description: "Returns a message if the API is up and running."
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Message"
+  /api/config:
+    get:
+      summary: "Returns the configuration of the Home Assistant instance."
+      description: "Returns the configuration of the Home Assistant instance."
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Config"
+  /api/events:
+    get:
+      summary: "Returns an array of event objects. Each event object contains event name and listener count."
+      description: "Returns an array of event objects. Each event object contains event name and listener count."
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Events"
+  /api/services:
+    get:
+      summary: "Returns an array of service objects. Each service object contains domain, service name, and description."
+      description: "Returns an array of service objects. Each service object contains domain, service name, and description."
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Services"
+components:
+  schemas:
+    Message:
+      type: object
+      properties:
+        message:
+          type: string
+          description: "The message returned by the API."
+    Config:
+      type: object
+      properties:
+        components:
+          type: array
+          description: "The components that are enabled in the Home Assistant instance."
+          items:
+            type: string
+        config_dir:
+          type: string
+          description: "The directory where the Home Assistant configuration is stored."
+        elevation:
+          type: integer
+          description: "The elevation of the Home Assistant instance."
+        latitude:
+          type: number
+          description: "The latitude of the Home Assistant instance."
+        location_name:
+          type: string
+          description: "The location name of the Home Assistant instance."
+        longitude:
+          type: number
+          description: "The longitude of the Home Assistant instance."
+        time_zone:
+          type: string
+          description: "The time zone of the Home Assistant instance."
+        unit_system:
+          type: object
+          description: "The unit system of the Home Assistant instance."
+          properties:
+            length:
+              type: string
+              description: "The length unit of the Home Assistant instance."
+            mass:
+              type: string
+              description: "The mass unit of the Home Assistant instance."
+            pressure:
+              type: string
+              description: "The pressure unit of the Home Assistant instance."
+            temperature:
+              type: string
+              description: "The temperature unit of the Home Assistant instance."
+            volume:
+              type: string
+              description: "The volume unit of the Home Assistant instance."
+        version:
+          type: string
+          description: "The version of the Home Assistant instance."
+        whitelist_external_dirs:
+          type: array
+          description: "The external directories that are whitelisted in the Home Assistant instance."
+          items:
+            type: string
+    Events:
+      type: array
+      description: "An array of event objects. Each event object contains event name and listener count."
+      items: 
+        $ref: "#/components/schemas/Event"
+    Event:
+      type: object
+      properties:
+        event:
+          type: string
+          description: "The type of the event."
+        listener_count:
+          type: object
+          description: "The data of the event."
+    Services:
+      type: array
+      description: "An array of service objects. Each service object contains domain, service name, and description."
+      items:
+        $ref: "#/components/schemas/Service"
+    Service:
+      type: object
+      properties:
+        domain:
+          type: string
+          description: "The domain of the service."
+        services:
+          type: array
+          description: "The names of the services."

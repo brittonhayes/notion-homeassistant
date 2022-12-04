@@ -19,5 +19,5 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - uses: actions/checkout@v3
       - run: |
-          npm install
-          npm run typecheck
+          yarn install
+          yarn run typecheck
