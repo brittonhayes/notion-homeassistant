@@ -3,6 +3,15 @@
  * Do not make direct changes to the file.
  */
 
+/** Type helpers */
+type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
+type XOR<T, U> = T | U extends object ? (Without<T, U> & U) | (Without<U, T> & T) : T | U;
+type OneOf<T extends any[]> = T extends [infer Only]
+  ? Only
+  : T extends [infer A, infer B, ...infer Rest]
+  ? OneOf<[XOR<A, B>, ...Rest]>
+  : never;
+
 export interface paths {
   "/api/": {
     /**
@@ -84,6 +93,207 @@ export interface paths {
       };
     };
   };
+  "/api/logbook": {
+    /**
+     * Returns an array of logbook objects.
+     * @description Returns an array of logbook objects.
+     */
+    get: {
+      /**
+       * Returns an array of logbook objects.
+       * @description Returns an array of logbook objects.
+       */
+      responses: {
+        /** @description Successful response */
+        200: {
+          content: {
+            "application/json": components["schemas"]["Logs"];
+          };
+        };
+      };
+    };
+  };
+  "/api/logbook/{timestamp}": {
+    /**
+     * Returns an array of logbook entries.
+     * @description Returns an array of logbook entries.
+     */
+    get: {
+      /**
+       * Returns an array of logbook entries.
+       * @description Returns an array of logbook entries.
+       */
+      parameters: {
+        /** @description Timestamp in ISO 8601 format */
+        path: {
+          timestamp: string;
+        };
+      };
+      responses: {
+        /** @description Successful response */
+        200: {
+          content: {
+            "application/json": components["schemas"]["Logs"];
+          };
+        };
+      };
+    };
+  };
+  "/api/states": {
+    /**
+     * Returns an array of state objects. Each state object contains entity ID, state, and attributes.
+     * @description Returns an array of state objects. Each state object contains entity ID, state, and attributes.
+     */
+    get: {
+      /**
+       * Returns an array of state objects. Each state object contains entity ID, state, and attributes.
+       * @description Returns an array of state objects. Each state object contains entity ID, state, and attributes.
+       */
+      responses: {
+        /** @description Successful response */
+        200: {
+          content: {
+            "application/json": components["schemas"]["States"];
+          };
+        };
+      };
+    };
+  };
+  "/api/states/{entity_id}": {
+    /**
+     * Returns a state object for the specified entity ID.
+     * @description Returns a state object for the specified entity ID.
+     */
+    get: {
+      /**
+       * Returns a state object for the specified entity ID.
+       * @description Returns a state object for the specified entity ID.
+       */
+      parameters: {
+        /** @description Entity ID */
+        path: {
+          entity_id: string;
+        };
+      };
+      responses: {
+        /** @description Successful response */
+        200: {
+          content: {
+            "application/json": components["schemas"]["State"];
+          };
+        };
+        /** @description Entity not found */
+        404: {
+          content: {
+            "application/json": components["schemas"]["Message"];
+          };
+        };
+      };
+    };
+  };
+  "/api/error_log": {
+    /**
+     * Returns an array of error logs in a plaintext response.
+     * @description Returns an array of error logs in a plaintext response.
+     */
+    get: {
+      /**
+       * Returns an array of error logs in a plaintext response.
+       * @description Returns an array of error logs in a plaintext response.
+       */
+      responses: {
+        /** @description Successful response */
+        200: {
+          content: {
+            "text/plain": string;
+          };
+        };
+      };
+    };
+  };
+  "/api/calendars": {
+    /**
+     * Returns an array of calendar objects. Each calendar object contains calendar name, and entity ID.
+     * @description Returns an array of calendar objects. Each calendar object contains calendar name, and entity ID.
+     */
+    get: {
+      /**
+       * Returns an array of calendar objects. Each calendar object contains calendar name, and entity ID.
+       * @description Returns an array of calendar objects. Each calendar object contains calendar name, and entity ID.
+       */
+      responses: {
+        /** @description Successful response */
+        200: {
+          content: {
+            "application/json": components["schemas"]["CalendarEntities"];
+          };
+        };
+      };
+    };
+  };
+  "/api/calendars/{entity_id}": {
+    /**
+     * Returns an array of calendar event objects for the specified entity ID.
+     * @description Returns an array of calendar event objects for the specified entity ID.
+     */
+    get: {
+      /**
+       * Returns an array of calendar event objects for the specified entity ID.
+       * @description Returns an array of calendar event objects for the specified entity ID.
+       */
+      parameters: {
+        /** @description Entity ID */
+        path: {
+          entity_id: string;
+        };
+      };
+      responses: {
+        /** @description Successful response */
+        200: {
+          content: {
+            "application/json": components["schemas"]["CalendarEvents"];
+          };
+        };
+        /** @description Entity not found */
+        404: {
+          content: {
+            "application/json": components["schemas"]["Message"];
+          };
+        };
+      };
+    };
+  };
+  "/api/template": {
+    /**
+     * Render a Home Assistant template.
+     * @description Render a Home Assistant template.
+     */
+    post: {
+      /**
+       * Render a Home Assistant template.
+       * @description Render a Home Assistant template.
+       */
+      requestBody: {
+        content: {
+          "application/json": components["schemas"]["Template"];
+        };
+      };
+      responses: {
+        /** @description Successful response */
+        200: {
+          content: {
+            "text/plain": string;
+          };
+        };
+        /** @description Bad request */
+        400: {
+          content: {
+            "application/json": components["schemas"]["Message"];
+          };
+        };
+      };
+    };
+  };
 }
 
 export type webhooks = Record<string, never>;
@@ -151,6 +361,97 @@ export interface components {
         /** @description The target of the service. */
         target?: Record<string, never>;
       }[];
+    };
+    State: {
+      /** @description The attributes of the state. */
+      attributes?: Record<string, never>;
+      /** @description The entity ID of the state. */
+      entity_id?: string;
+      /** @description The last changed time of the state. */
+      last_changed?: string;
+      /** @description The last updated time of the state. */
+      last_updated?: string;
+      /** @description The state of the state. */
+      state?: string;
+    };
+    /** @description An array of state objects. Each state object contains entity ID, state, attributes, and last changed time. */
+    States: components["schemas"]["State"][];
+    /** @description An array of calendar objects. Each calendar object contains calendar name, and entity ID. */
+    CalendarEntities: components["schemas"]["CalendarEntity"][];
+    CalendarEntity: {
+      /** @description The name of the calendar. */
+      calendar?: string;
+      /** @description The entity ID of the calendar. */
+      entity_id?: string;
+    };
+    /** @description An array of calendar event objects. Each calendar event object contains event name, start time, end time, and location. */
+    CalendarEvents: components["schemas"]["CalendarEvent"][];
+    CalendarEvent: {
+      /** @description The summary of the calendar event. */
+      summary?: string;
+      /** @description The description of the calendar event. */
+      description?: string;
+      /** @description The location of the calendar event. */
+      location?: string;
+      start?: OneOf<
+        [
+          {
+            /**
+             * Format: date-time
+             * @description The start date/time of the calendar event.
+             */
+            dateTime?: string;
+          },
+          {
+            /**
+             * Format: date
+             * @description The start date of the calendar event.
+             */
+            date?: string;
+          }
+        ]
+      >;
+      end?: OneOf<
+        [
+          {
+            /**
+             * Format: date-time
+             * @description The start date/time of the calendar event.
+             */
+            dateTime?: string;
+          },
+          {
+            /**
+             * Format: date
+             * @description The start date of the calendar event.
+             */
+            date?: string;
+          }
+        ]
+      >;
+    };
+    Template: {
+      /** @description The template to render. */
+      template?: string;
+    };
+    /** @description An array of log objects. Each log object contains log level, timestamp, source, and message. */
+    Logs: components["schemas"]["Log"][];
+    Log: {
+      /** @description The user id context of the log */
+      context_user_id?: string;
+      /** @description The domain of the log. */
+      domain?: string;
+      /** @description The entity id of the log. */
+      entity_id?: string;
+      /** @description The message of the log. */
+      message?: string;
+      /** @description The name of the log. */
+      name?: string;
+      /**
+       * Format: date-time
+       * @description The timestamp of the log.
+       */
+      when?: string;
     };
   };
   responses: never;

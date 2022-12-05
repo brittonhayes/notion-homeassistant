@@ -22,9 +22,7 @@ async function main() {
     client: notion,
   });
 
-  const properties = await integration.database.properties(
-    process.env.NOTION_DATABASE_ID!
-  );
+  const properties = await integration.database.properties(process.env.NOTION_DATABASE_ID!);
 
   services.data.map(async (data) => {
     await integration.database.update({

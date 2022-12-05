@@ -1,8 +1,5 @@
 import { Client } from "@notionhq/client";
-import {
-  CreatePageParameters,
-  UpdateDatabaseParameters,
-} from "@notionhq/client/build/src/api-endpoints";
+import { CreatePageParameters, UpdateDatabaseParameters } from "@notionhq/client/build/src/api-endpoints";
 
 interface IntegrationProperties {
   client: Client;
