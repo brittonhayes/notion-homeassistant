@@ -6,6 +6,8 @@
 
 This is a simple integration between [Notion](https://www.notion.so/) and [Home Assistant](https://www.home-assistant.io/). Allows you to sync your Home Assistant entities, devices, and services to Notion databases.
 
+This package uses [brittonhayes/homeassistant-ts](https://github.com/brittonhayes/homeassistant-ts) to interact with Home Assistant.
+
 ## ⚡ Usage
 
 How to use the integration.

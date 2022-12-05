@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client";
-import * as homeassistant from "./homeassistant";
+import * as homeassistant from "@brittonhayes/homeassistant-ts";
 
 import dotenv from "dotenv";
 import { Integration } from "./notion";
@@ -24,7 +24,7 @@ async function main() {
 
   const properties = await integration.database.properties(process.env.NOTION_DATABASE_ID!);
 
-  services.data.map(async (data) => {
+  return services.data.map(async (data) => {
     await integration.database.update({
       parent: {
         database_id: process.env.NOTION_DATABASE_ID!,
