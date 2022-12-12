@@ -21,7 +21,7 @@
     "@notionhq/client": "^2.2.2",
     "@types/node-fetch": "2",
     "dotenv": "^16.0.3",
-    "node-fetch": "2"
+    "node-fetch": "3"
   },
   "devDependencies": {
     "@types/node": "^18.0.3",
