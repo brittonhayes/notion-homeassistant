@@ -17,7 +17,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@brittonhayes/homeassistant-ts": "^0.1.16",
+    "@brittonhayes/homeassistant-ts": "^0.1.20",
     "@notionhq/client": "^2.2.2",
     "@types/node-fetch": "2",
     "dotenv": "^16.0.3",
